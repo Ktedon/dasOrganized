@@ -1,0 +1,181 @@
+@()(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+
+@main("Welcome to dasOrganized") {
+
+<!-- Section 1 -->
+<section class="w-full px-6 pb-12 antialiased bg-white">
+    <div class="mx-auto max-w-7xl">
+
+        <nav class="relative z-50 h-24 select-none" x-data="{ showMenu: false }">
+            <div class="container relative flex flex-wrap items-center justify-between h-24 mx-auto overflow-hidden font-medium border-b border-gray-200 md:overflow-visible lg:justify-center sm:px-4 md:px-2">
+                <div class="flex items-center justify-start w-1/4 h-full pr-4">
+                    <a href="#_" class="inline-block py-4 md:py-0">
+                        <span class="p-1 text-xl font-black leading-none text-gray-900"><span>dasOrganized</span><span class="text-indigo-600">.</span></span>
+                    </a>
+                </div>
+                <div class="top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 md:absolute lg:text-base md:bg-transparent md:p-0 md:relative md:flex" :class="{'flex fixed': showMenu, 'hidden': !showMenu }">
+                    <div class="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row">
+                        <a href="#_" class="inline-flex items-center block w-auto h-16 px-6 text-xl font-black leading-none text-gray-900 md:hidden">tails<span class="text-indigo-600">.</span></a>
+                        <div class="flex flex-col items-start justify-center w-full space-x-6 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center">
+                            <a href="/" class="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-indigo-600 md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center">Home</a>
+                            <a href="/blog" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">Blog</a>
+                            <a href="/contact" class="inline-block w-full py-2 mx-0 font-medium text-left text-gray-700 md:w-auto md:px-0 md:mx-2 hover:text-indigo-600 lg:mx-3 md:text-center">Contact</a>
+                        </div>
+                        <div class="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
+                            <a href="/signin" class="w-full px-6 py-2 mr-0 text-gray-700 md:px-0 lg:pl-2 md:mr-4 lg:mr-5 md:w-auto">Sign In</a>
+                            <a href="/signup" class="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white bg-indigo-600 md:px-3 md:w-auto md:rounded-full lg:px-5 hover:bg-indigo-500 focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring-indigo-600">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+                <div @@click="showMenu = !showMenu" class="absolute right-0 flex flex-col items-center items-end justify-center w-10 h-10 bg-white rounded-full cursor-pointer md:hidden hover:bg-gray-100">
+                    <svg class="w-6 h-6 text-gray-700" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" x-cloak="">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <svg class="w-6 h-6 text-gray-700" x-show="showMenu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" x-cloak="">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Hero Content -->
+        <div class="container max-w-lg px-4 py-32 mx-auto text-left md:max-w-none md:text-center">
+            <h1 class="text-5xl font-extrabold leading-10 tracking-tight text-left text-gray-900 md:text-center sm:leading-none md:text-6xl lg:text-7xl"><span class="inline md:block">Start Crafting Your</span> <span class="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 to-indigo-500 md:inline-block">Next Social Experience</span></h1>
+            <div class="mx-auto mt-5 text-gray-500 md:mt-12 md:max-w-lg md:text-center lg:text-lg">Turning humans into one dimensional beings incapable of genuine in-person interaction!</div>
+            <div class="flex flex-col items-center mt-12 text-center">
+                <span class="relative inline-flex w-full md:w-auto">
+                    <a href="/signup" type="button" class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-indigo-600 border border-transparent rounded-full md:w-auto hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+                        Sign Up Now
+                    </a>
+                </span>
+                <a href="/blog" class="mt-3 text-sm text-indigo-500">Learn More</a>
+            </div>
+        </div>
+        <!-- End Main Hero Content -->
+
+    </div>
+</section>
+
+<!-- Section 2 -->
+<section class="px-2 pt-32 bg-white md:px-0">
+    <div class="container items-center max-w-6xl px-5 mx-auto space-y-6 text-center">
+        <h1 class="text-4xl font-extrabold tracking-tight text-left text-gray-900 sm:text-5xl md:text-6xl md:text-center">
+            <span class="block">Level Up Your <span class="block mt-1 text-purple-500 lg:inline lg:mt-0">"FrIeNdS"</span></span>
+        </h1>
+        <p class="w-full mx-auto text-base text-left text-gray-500 md:max-w-md sm:text-lg lg:text-2xl md:max-w-3xl md:text-center">
+            We know you have social anxiety and and crippling loneliness.
+        </p>
+        <div class="relative flex flex-col justify-center md:flex-row md:space-x-4">
+            <a href="#_" class="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-purple-500 rounded-md md:mb-0 hover:bg-purple-700 md:w-auto">
+                Try It Free
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <a href="#_" class="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600">
+                Learn More
+            </a>
+        </div>
+    </div>
+    <div class="container items-center max-w-4xl px-5 mx-auto mt-16 text-center">
+        <img src="@routes.Assets.versioned("images/hero_image.png")">
+    </div>
+</section>
+
+<!-- Section 3 -->
+<section class="w-full px-8 py-16 bg-gray-100 xl:px-8">
+    <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col items-center md:flex-row">
+
+            <div class="w-full space-y-5 md:w-3/5 md:pr-16">
+                <p class="font-medium text-blue-500 uppercase">Feel Better</p>
+                <h2 class="text-2xl font-extrabold leading-none text-black sm:text-3xl md:text-5xl">
+                    You Probably Hate Your Face
+                </h2>
+                <p class="text-xl text-gray-600 md:pr-16">If you hate yourself, you should join dasOrganized where your friend count dictates your self-assurance.</p>
+            </div>
+
+            <div class="w-full mt-16 md:mt-0 md:w-2/5">
+                <form class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7" action="/signin" method="post">
+                  @helper.CSRF.formField
+                    <h3 class="mb-6 text-2xl font-medium text-center">Sign in to your Account</h3>
+                    <input type="text" name="email" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Email address">
+                    <input type="password" name="password" class="block w-full px-4 py-3 mb-4 border border-2 border-transparent border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none" placeholder="Password">
+                    <div class="block">
+                        <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 rounded-lg" type="submit">Log Me In</button>
+                    </div>
+                    <p class="w-full mt-4 text-sm text-center text-gray-500">Forgot your password? <a href="/forgotPassword" class="text-blue-500 underline">Reset password here</a></p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Section 4 -->
+<section class="py-24 bg-white">
+    <div class="px-8 mx-auto max-w-7xl lg:px-16">
+        <h2 class="mb-4 text-xl font-bold md:text-3xl">Frequently Asked Questions</h2>
+        <div class="grid grid-cols-1 gap-0 text-gray-600 md:grid-cols-2 md:gap-16">
+            <div>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">What is dasOrganized</h5>
+                <p>dasOrganized is a chatting site for lonely high school students that verifies everyone is actually a student.</p>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">Can I try it for Free?</h5>
+                <p>Absolutely, you can use dasOrganized for free; however, if you wish to be awesome, you'll need to HODL our useless cryptocurrency high then sell it for dirt.</p>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">Where do I go to upgrade my account?</h5>
+                <p>
+                    You don't. It's free.
+                </p>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">How long will I have access to dasOrganized</h5>
+                <p>
+                    Forever, or until we inevitable get shut down.
+                </p>
+            </div>
+            <div>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">Are my friends on dasOrganized?</h5>
+                <p>How the hell would I know? Oh, trick question. You don't have any friends do you?</p>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">Are there ads?</h5>
+                <p>Absolutely not. Advertisements are evil soul sucking demons.</p>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">Can I cancel my account if I not longer need it?</h5>
+                <p>Of course, you can feel free to cancel your account at anytime, and you can feel free to come back and join again whenever you're ready.</p>
+                <h5 class="mt-10 mb-3 font-semibold text-gray-900">How can I hit on girls without being creepy?</h5>
+                <p>Be atleast a seven. Get a personality. Stop sending dick-picks.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5 -->
+<section class="bg-white">
+    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+      <nav class="flex flex-wrap justify-center -mx-5 -my-2">
+          <div class="px-5 py-2">
+              <a href="/about" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  About
+              </a>
+          </div>
+          <div class="px-5 py-2">
+              <a href="/blog" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Blog
+              </a>
+          </div>
+          <div class="px-5 py-2">
+              <a href="/contact" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Contact
+              </a>
+          </div>
+          <div class="px-5 py-2">
+              <a href="signin" class="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Terms
+              </a>
+          </div>
+      </nav>
+        <p class="mt-8 text-base leading-6 text-center text-gray-400">
+            © 2022 Nihilist Succulent, Inc. All rights reserved.
+        </p>
+    </div>
+</section>
+
+}

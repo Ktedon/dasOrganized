@@ -1,0 +1,30 @@
+
+CREATE TABLE contact (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  subject VARCHAR(400) NOT NULL,
+  message TEXT NOT NULL
+);
+
+CREATE TABLE member (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  pwd VARCHAR(150) NOT NULL,
+  profile_icon VARCHAR(250) NOT NULL,
+  banner VARCHAR(20) NOT NULL,
+  is_archived BOOL NOT NULL
+);
+
+CREATE TABLE chatroom (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  owner INT4 NOT NULL
+);
+
+CREATE TABLE chat_member (
+  id SERIAL PRIMARY KEY,
+  member_id INT4 NOT NULL,
+  chatroom_id INT4 NOT NULL
+);
